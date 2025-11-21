@@ -163,10 +163,12 @@ def create_app() -> Flask:
     return app
 
 
+# Create a module-level app instance for gunicorn and WSGI servers
+app = create_app()
+
+
 def main():
     """Create and run the Flask app."""
-    app = create_app()
-
     print("=" * 60)
     print("AI Question Answering Interface")
     print("=" * 60)
