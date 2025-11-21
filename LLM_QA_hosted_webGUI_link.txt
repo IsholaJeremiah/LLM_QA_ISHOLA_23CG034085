@@ -1,8 +1,8 @@
-﻿Name: Osarenkhoe Osatohanmwen
-Matric Number: 23CG034140
+﻿Name: Ishola Ishola Jeremiah
+Matric Number: 23CG034085
 
-Live URL: https://llm-qa-osarenkhoe-23cg034140.onrender.com/
-GitHub Repository: https://github.com/OsatohanmwenT/LLM_QA_OSARENKHOE_23CG034140
+Live URL: https://llm-qa-ishola-23cg034085.onrender.com
+GitHub Repository: https://github.com/IsholaJeremiah/LLM_QA_ISHOLA_23CG034085
 
 Instructions:
 1. Deploy the application to Render.com
