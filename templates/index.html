@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant | Osarenkhoe Osatohanmwen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-content">
+                <div class="ai-badge">
+                    <span class="ai-icon">🤖</span>
+                    <div class="ai-info">
+                        <h1>AI CHAT BOT</h1>
+                    </div>
+                </div>
+                <div class="student-badge">
+                    <div class="student-info-compact">
+                        <p><strong>Osarenkhoe Osatohanmwen</strong></p>
+                        <p class="matric">23CG034140</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Messages Area -->
+        <main class="chat-main">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-icon">👋</div>
+                    <h2 class="welcome-title">Good Morning, Osarenkhoe</h2>
+                    <h3 class="welcome-subtitle">How Can I <span class="highlight">Assist You Today?</span></h3>
+                    <p class="welcome-description">Initiate a query or send a command to the AI...</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <div class="chat-input-container">
+            <form id="questionForm" class="chat-form">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="questionInput" 
+                        placeholder="Initiate a query or send a command to the AI..."
+                        rows="1"
+                        required
+                    ></textarea>
+                    <button type="submit" id="submitBtn" class="send-btn">
+                        <span class="btn-icon">📤</span>
+                        <span class="spinner" style="display: none;">⏳</span>
+                    </button>
+                </div>
+                <div class="action-buttons">
+                    <button type="button" class="action-btn">
+                        <span>✍️</span> Reasoning
+                    </button>
+                    <button type="button" class="action-btn">
+                        <span>🎨</span> Create Image
+                    </button>
+                    <button type="button" class="action-btn">
+                        <span>📊</span> Deep Research
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿Name: Osarenkhoe Osatohanmwen
+Matric Number: 23CG034140
+
+Live URL: https://llm-qa-osarenkhoe-23cg034140.onrender.com/
+GitHub Repository: https://github.com/OsatohanmwenT/LLM_QA_OSARENKHOE_23CG034140
+
+Instructions:
+1. Deploy the application to Render.com
+2. Update this file with the actual live URL
+3. Update this file with your GitHub repository URL
+4. Ensure the repository is public for submission
