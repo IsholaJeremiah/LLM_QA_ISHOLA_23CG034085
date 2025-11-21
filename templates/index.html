@@ -1,74 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Assistant | Osarenkhoe Osatohanmwen</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="chat-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI Q&A Assistant powered by Google Gemini"
+    />
+    <title>AI Q&A Assistant | Ishola Jeremiah</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="logo-area">
+          <div class="logo-badge">
+            <span class="logo-icon">🤖</span>
+          </div>
+          <h1 class="app-title">AI Q&A</h1>
+        </div>
+
+        <nav class="nav-menu">
+          <button class="nav-item active" data-view="chat">
+            <span class="icon">💬</span>
+            <span>Chat</span>
+          </button>
+          <button class="nav-item" data-view="history">
+            <span class="icon">📜</span>
+            <span>History</span>
+          </button>
+          <button class="nav-item" data-view="settings">
+            <span class="icon">⚙️</span>
+            <span>Settings</span>
+          </button>
+        </nav>
+
+        <div class="user-profile">
+          <div class="profile-avatar">IJ</div>
+          <div class="profile-info">
+            <p class="profile-name">Ishola Jeremiah</p>
+            <p class="profile-id">23CG034085</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Chat Area -->
+      <main class="chat-container">
         <!-- Header -->
         <header class="chat-header">
-            <div class="header-content">
-                <div class="ai-badge">
-                    <span class="ai-icon">🤖</span>
-                    <div class="ai-info">
-                        <h1>AI CHAT BOT</h1>
-                    </div>
-                </div>
-                <div class="student-badge">
-                    <div class="student-info-compact">
-                        <p><strong>Osarenkhoe Osatohanmwen</strong></p>
-                        <p class="matric">23CG034140</p>
-                    </div>
-                </div>
-            </div>
+          <div class="header-title">
+            <h2>Chat with AI Assistant</h2>
+            <p class="status-indicator">
+              <span class="status-dot"></span>
+              Ready
+            </p>
+          </div>
+          <button
+            class="header-btn clear-btn"
+            id="clearChatBtn"
+            title="Clear chat"
+          >
+            <span>🗑️</span>
+          </button>
         </header>
 
-        <!-- Chat Messages Area -->
-        <main class="chat-main">
-            <div class="chat-messages" id="chatMessages">
-                <!-- Welcome Message -->
-                <div class="welcome-screen" id="welcomeScreen">
-                    <div class="welcome-icon">👋</div>
-                    <h2 class="welcome-title">Good Morning, Osarenkhoe</h2>
-                    <h3 class="welcome-subtitle">How Can I <span class="highlight">Assist You Today?</span></h3>
-                    <p class="welcome-description">Initiate a query or send a command to the AI...</p>
+        <!-- Messages Area -->
+        <div class="messages-wrapper">
+          <div class="chat-messages" id="chatMessages">
+            <!-- Welcome Screen -->
+            <div class="welcome-section" id="welcomeScreen">
+              <div class="welcome-content">
+                <div class="welcome-icon">👋</div>
+                <h2 class="welcome-title">Welcome to AI Q&A Assistant</h2>
+                <p class="welcome-subtitle">
+                  Ask me anything! I'm powered by Google Gemini.
+                </p>
+                <div class="suggestion-grid">
+                  <div class="suggestion-card">
+                    <span class="suggestion-icon">💡</span>
+                    <span class="suggestion-text">Get insights</span>
+                  </div>
+                  <div class="suggestion-card">
+                    <span class="suggestion-icon">📚</span>
+                    <span class="suggestion-text">Learn topics</span>
+                  </div>
+                  <div class="suggestion-card">
+                    <span class="suggestion-icon">🔍</span>
+                    <span class="suggestion-text">Research</span>
+                  </div>
+                  <div class="suggestion-card">
+                    <span class="suggestion-icon">�</span>
+                    <span class="suggestion-text">Code help</span>
+                  </div>
                 </div>
+              </div>
             </div>
-        </main>
-
-        <!-- Input Area -->
-        <div class="chat-input-container">
-            <form id="questionForm" class="chat-form">
-                <div class="input-wrapper">
-                    <textarea 
-                        id="questionInput" 
-                        placeholder="Initiate a query or send a command to the AI..."
-                        rows="1"
-                        required
-                    ></textarea>
-                    <button type="submit" id="submitBtn" class="send-btn">
-                        <span class="btn-icon">📤</span>
-                        <span class="spinner" style="display: none;">⏳</span>
-                    </button>
-                </div>
-                <div class="action-buttons">
-                    <button type="button" class="action-btn">
-                        <span>✍️</span> Reasoning
-                    </button>
-                    <button type="button" class="action-btn">
-                        <span>🎨</span> Create Image
-                    </button>
-                    <button type="button" class="action-btn">
-                        <span>📊</span> Deep Research
-                    </button>
-                </div>
-            </form>
+          </div>
         </div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+          <form id="questionForm" class="input-form">
+            <div class="input-group">
+              <textarea
+                id="questionInput"
+                class="message-input"
+                placeholder="Type your question here... (Shift+Enter for new line)"
+                rows="1"
+                required
+              ></textarea>
+              <button
+                type="submit"
+                id="submitBtn"
+                class="send-button"
+                title="Send message"
+              >
+                <span class="btn-text">Send</span>
+                <span class="btn-icon">➤</span>
+                <span class="spinner hidden">⏳</span>
+              </button>
+            </div>
+            <p class="input-hint">
+              Press Enter to send, Shift+Enter for new line
+            </p>
+          </form>
+        </div>
+      </main>
     </div>
 
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
     <script src="{{ url_for('static', filename='app.js') }}"></script>
-</body>
+  </body>
 </html>
